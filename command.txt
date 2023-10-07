@@ -1,0 +1,38 @@
+-r
+cd /data/bjdm/ZSH
+
+conda activate ZSH
+
+CUDA_VISIBLE_DEVICES=0,1,2 python3 train_alexnet.py
+CUDA_VISIBLE_DEVICES=1 python3 train_vgg.py
+CUDA_VISIBLE_DEVICES=0 python3 train_resnet.py
+
+
+tensorflow ==1.13.1
+numpy==1.16
+numpy-1.16.0
+
+screen -S xxx
+screen -ls 
+screen -r xxx
+快捷键 ctrl+D 删除
+
+ctrl a + d    暂时退出界面
+or  
+screen -d
+
+ctrl+z stooped
+
+查看显卡状态
+nvidia-smi
+
+将一个文件夹下的所有内容复制到另一个文件夹下
+cp -r /home/packageA/* /home/cp/packageB/ (文件夹下内容太多会报错，用下面那个就可以)
+OR
+cp -r /home/packageA/. /home/cp/packageB/
+
+将一个文件夹复制到另一个文件夹下
+cp -r /home/packageA /home/packageB
+
+查看统计文件数量
+ls -l | grep "^-" | wc -l
